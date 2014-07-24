@@ -1,0 +1,19 @@
+<% if @visit.errors.any? %>
+  <ul>
+  <% @visit.errors.full_messages.each do |error_message| %>
+    <li><%= error_message %></li>
+   <% end %>
+  </ul>
+<% end %>   
+
+
+<%= form_for [@location, @visit] do |f| %>
+  <%= f.label :user_name %>
+  <%= f.text_field :user_name %>
+  <br/>
+  <%= f.datetime_select(:from_date, default: Time.now + 1.days) %>
+  <br/>
+  <%= f.datetime_select(:to_date, default: Time.now + 1.days) %>
+  <br/>
+  <%= f.submit 'Edit' %>
+<% end %>  

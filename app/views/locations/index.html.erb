@@ -1,0 +1,16 @@
+<h1>Locations#index</h1>
+
+<ul>
+<% @locations.each do |l| %>
+  <li>
+   <%= l.name %>
+   <% if l.name.present? && l.city.present? %> - <% end %>
+   <small><%= l.city %></small>
+   -
+
+   <%= link_to 'View visits', location_visits_path(l) %>
+   <%= link_to '- Create visit', new_location_visit_path(l) %>
+    <!-- Magic of ruby, you can write the above instead of this one <a href='<%= location_visits_path(l) %>'>View visits</a> -->
+   </li>
+<% end %>
+</ul>

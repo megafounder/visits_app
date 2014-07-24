@@ -1,0 +1,18 @@
+
+<%= flash[:notice] %>
+<h1>Visits#index</h1>
+
+<% unless @visits.blank? %>
+<ul>
+  <% @visits.each do |v| %>
+  <li>
+      <%= v.user_name %> - <%= v.location.name %> - <%= link_to 'Cancel visit', [v.location, v], confirm: 'Are you sure you want to remove this visit? This cannot be undone.', :method => :delete %>
+        <%= link_to 'Edit visit', edit_location_visit_path(v.location, v)  %>
+  </li>
+  <% end %>
+</ul>
+<% else %>
+<h3>No visits!</h3>
+<% end %>
+
+<%= link_to 'Back to locations', locations_path() %>
