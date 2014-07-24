@@ -4,7 +4,7 @@ class Visit < ActiveRecord::Base
 
   validates :from_date, presence: true
   validates :to_date, presence: true
-  validates :user_name, presence: true, format: { with: /[:alnum:]/ }
+  validates :user_name, presence: true, format: { with: /[[:alnum:]]/ }
   validates_associated :location
 
   validate :from_date_is_before_to_date

@@ -1,0 +1,13 @@
+
+<h1>HELLO USERS</h1>
+
+<% unless @users.blank? %>
+  <ul>
+    <% @users.each do |u| %>
+    <li>
+      <%= u.name %> - <%= u.location_id %> - <%= u.visit_id %> - <%= u.premium %>
+    </li>
+    <% end %>
+  </ul>
+
+<% end %>

@@ -11,7 +11,7 @@ RSpec.describe Location, :type => :model do
     visit = Visit.create location_id: place.id, from_date: Time.now + 5.months, to_date: Time.now + 5.months + 1.days, user_name: 'troll'
     Visit.create location_id: place.id, from_date: Time.now + 5.months, to_date: Time.now + 5.months + 1.days, user_name: 'troll'
     Visit.create location_id: place.id, from_date: Time.now + 7.months, to_date: Time.now + 7.months + 1.days, user_name: 'troll'
-    Visit.create location_id: place.id, from_date: Time.now + 5.months, to_date: Time.now + 5.months + 1.days, user_name: 'troll'
+    Visit.create location_id: place.id, from_date: Time.now + 6.months, to_date: Time.now + 6.months + 1.days, user_name: 'troll'
     expect(place.total_visits_in_month_of_year(12, 2014)).to eql(2)
   end
 
