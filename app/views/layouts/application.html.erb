@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= link_to 'home', root_path %>
+
+<%= link_to 'people', users_path %>
 
 <%= yield %>
 
+<p>2014 Meet Me Inc. All rights reserved.</p>
 </body>
 </html>
